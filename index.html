@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portofolio Kreatif | UAS Desain Web</title>
+
+<style>
+:root{
+  --purple-dark:#4c1d95;
+  --purple-main:#7c3aed;
+  --purple-light:#a78bfa;
+  --accent:#f472b6;
+  --bg:#f5f3ff;
+  --text:#1f2937;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:linear-gradient(135deg,var(--purple-dark),var(--purple-main));
+  z-index:1000;
+  box-shadow:0 8px 30px rgba(0,0,0,.25)
+}
+.navbar{
+  max-width:1200px;margin:auto;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 30px
+}
+.logo{
+  color:#fff;
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:.5px
+}
+.nav-menu{list-style:none;display:flex;gap:22px}
+.nav-menu a{
+  color:#fff;text-decoration:none;
+  padding:8px 18px;
+  border-radius:999px;
+  transition:.35s;
+  font-weight:600
+}
+.nav-menu a:hover{
+  background:rgba(255,255,255,.2);
+  transform:translateY(-2px)
+}
+
+/* SECTION */
+section{
+  padding:130px 20px;
+  scroll-margin-top:100px
+}
+.container{max-width:1100px;margin:auto}
+
+/* HERO */
+#home{
+  min-height:100vh;
+  display:flex;align-items:center;
+  background:linear-gradient(135deg,#4c1d95,#7c3aed,#a78bfa);
+  color:#fff;
+  text-align:center;
+  position:relative;
+  overflow:hidden
+}
+#home::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='rgba(255,255,255,0.08)'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+#home .container{position:relative}
+#home h1{
+  font-size:52px;
+  margin-bottom:18px;
+  font-weight:900
+}
+#home span{color:var(--accent)}
+#home p{
+  max-width:720px;
+  margin:0 auto 35px;
+  font-size:19px
+}
+.cta{
+  display:inline-block;
+  padding:15px 40px;
+  background:linear-gradient(135deg,var(--accent),#fb7185);
+  color:#000;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  transition:.4s
+}
+.cta:hover{transform:scale(1.05)}
+
+/* TITLE */
+h2{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:45px;
+  color:var(--purple-dark)
+}
+
+/* ABOUT */
+#about .wrap{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:50px;
+  justify-content:center
+}
+.profile-img{
+  width:240px;height:240px;
+  border-radius:50%;
+  object-fit:cover;
+  border:7px solid var(--accent);
+  box-shadow:0 25px 60px rgba(0,0,0,.3)
+}
+#about p{
+  max-width:620px;
+  font-size:18px
+}
+
+/* GRID & CARD */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px
+}
+.card{
+  background:#fff;
+  padding:40px;
+  border-radius:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,.1);
+  transition:.5s;
+  position:relative;
+  overflow:hidden
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,var(--purple-main),var(--purple-light));
+  opacity:0;
+  transition:.5s
+}
+.card:hover::before{opacity:.1}
+.card:hover{
+  transform:translateY(-15px) scale(1.02)
+}
+.card h3{
+  color:var(--purple-main);
+  margin-bottom:12px;
+  position:relative
+}
+
+/* SKILLS */
+.skill span{
+  display:block;
+  font-weight:700;
+  margin-bottom:8px
+}
+.bar{
+  background:#ede9fe;
+  border-radius:20px;
+  overflow:hidden
+}
+.bar div{
+  height:12px;
+  background:linear-gradient(90deg,var(--purple-main),var(--accent))
+}
+
+/* TAG */
+.tag{
+  display:inline-block;
+  margin-top:12px;
+  padding:6px 14px;
+  background:linear-gradient(135deg,var(--purple-main),var(--accent));
+  color:#fff;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700
+}
+
+/* CONTACT */
+form{max-width:520px;margin:auto}
+input,textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:16px;
+  border-radius:14px;
+  border:1px solid #ddd
+}
+button{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--purple-main),var(--accent));
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+  transition:.4s
+}
+button:hover{transform:scale(1.05)}
+
+/* FOOTER */
+footer{
+  background:linear-gradient(135deg,var(--purple-dark),#020617);
+  color:#e9d5ff;
+  text-align:center;
+  padding:35px
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Sukma Ayu Ningrum 2211050079, 7 IPII C</div>
+    <ul class="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portofolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home">
+  <div class="container">
+    <h1><span>Sukma Ayu Ningrum</span><br>TAHUN DEPAN WISUDA</h1>
+    <p>sukmaayuningrum0@gmail.com.</p>
+    <a href="#portfolio" class="cta">Lihat Karya Saya</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2>Tentang Saya</h2>
+    <div class="wrap">
+      <img src="foto saya.jpg" class="profile-img" alt="Foto Profil">
+      <p>
+       Nama saya Sukma Ayu Ningrum, biasa dipanggil Sukma. Saya lahir di Dharmasraya pada 17 Juli 2004. Saat ini saya tinggal dan merantau di Kota Padang, Sumatera Barat. Saya merupakan anak kedua dari tiga bersaudara. Riwayat pendidikan saya dimulai dari MIS Nidaul Ummanh, kemudian SMP Negeri 01 Tiumang, dan SMA Negeri 01 Tiumang. Pada tahun 2022, saya melanjutkan kuliah di Universitas Islam Negeri (UIN) Imam Bonjol Padang, Fakultas Adab dan Humaniora, jurusan Ilmu Perpustakaan dan Informasi Islam. Saya tertarik pada desain web dan pengelolaan informasi digital. Website ini saya buat sebagai portofolio pribadi sekaligus untuk memenuhi tugas UAS mata kuliah Desain Web, serta sebagai media untuk belajar dan mengembangkan kemampuan di bidang teknologi dan desain.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card skill">
+        <span>Canva</span>
+        <div class="bar"><div style="width:90%"></div></div>
+      </div>
+      <div class="card skill">
+        <span>Web Design</span>
+        <div class="bar"><div style="width:85%"></div></div>
+      </div>
+      <div class="card skill">
+        <span>Microsoft Word </span>
+        <div class="bar"><div style="width:70%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <h2>Portofolio</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Website Portofolio</h3>
+        <p>Single page website dengan navigasi anchor dan animasi modern.</p>
+        <span class="tag">UAS</span>
+      </div>
+      <div class="card">
+        <h3>Landing Page Produk</h3>
+        <p>Landing page dengan fokus visual, branding, dan UX.</p>
+        <span class="tag">Project</span>
+      </div>
+      <div class="card">
+        <h3>UI Edukasi</h3>
+        <p>Prototype antarmuka website edukasi berbasis literasi digital.</p>
+        <span class="tag">Fiktif</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Hubungi Saya</h2>
+    <form>
+      <input type="text" placeholder="Sukma Ayu Ningrum" requird>
+      <input type="email" placeholder="sukmaayuningrum0@gmail.com" required>
+      <textarea rows="4" placeholder="Malu Bertanya Sesat Di Jalan" required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 • sukmaayuningrum0@gmail.com | UAS Desain dan Pengembangan WEB</p>
+</footer>
+
+<script>
+console.log("Portofolio ungu gradasi aktif");
+</script>
+
+</body>
+</html>
